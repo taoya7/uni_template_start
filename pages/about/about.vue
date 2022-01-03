@@ -1,6 +1,7 @@
 <template>
-  <view>
-    关于我们
+  <view> 关于我们 - 
+    <text>ABout
+      </text>
     </view>
 </template>
 
