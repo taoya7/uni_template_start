@@ -1,1 +1,6 @@
-/unpackage
+unpackage
+node_modules
+.DS_Store
+*.local
+
+.mocks/
