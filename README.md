@@ -12,7 +12,3 @@ Plugin
 
 
 
-
-### 参考
-
-https://gitee.com/xany/yoshop2.0-uniapp/tree/master
