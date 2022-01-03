@@ -1,0 +1,22 @@
+{
+  "name": "uni_template_start",
+  "version": "1.0.0",
+  "description": "Plugin",
+  "main": "main.js",
+  "dependencies": {
+    "uni-read-pages": "^1.0.5",
+    "uni-simple-router": "2.0.7",
+    "uview-ui": "^1.8.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/taoya7/uni_template_start.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
