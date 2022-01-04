@@ -7,6 +7,7 @@ Plugin
 - uni-simple-router 2.0.7
 - vuex
 - vue
+- mp-html
 ```
 
 

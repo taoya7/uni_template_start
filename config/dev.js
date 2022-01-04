@@ -1,3 +1,3 @@
 export default {
-	apiUrl: 'http://example.com',
+	apiUrl: 'https://blogapi.taoya.art/api',
 }

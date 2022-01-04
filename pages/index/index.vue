@@ -1,9 +1,10 @@
 <template>
-  <view class="content">
+  <view class="warp">
     <view>
       <view>Vuex: {{ $store.state.count }}</view>
     </view>
     <view> Uview: <u-button type="primary">+ </u-button> </view>
+    <view @tap="$Router.push('/pages/about/about')">Go</view>
   </view>
 </template>
 

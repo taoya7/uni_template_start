@@ -1,5 +1,7 @@
 <template>
-  <view> 关于我们 </view>
+  <view> 
+    <TestForDev></TestForDev>
+  </view>
 </template>
 
 <script></script>

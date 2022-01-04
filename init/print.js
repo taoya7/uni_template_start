@@ -7,6 +7,6 @@ console.log(`%c
 |__,'|_,'/_n_/ |_,','_n_\/__//_n_//_/\\ |_(////  
                _//                        //     
 
-`, `color: blue`);
+`, `color: pink`);
 console.log('Version: ', Version.version);
 

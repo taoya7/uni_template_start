@@ -1,7 +1,9 @@
 <script>
+  import Conf from '@/config/index.js';
 	export default {
 		onLaunch: function() {
 			this.updateManager()
+      if(Conf.debug){}
 		},
 		onShow: function() {
 		},

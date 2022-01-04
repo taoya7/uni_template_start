@@ -1,0 +1,4 @@
+import{_ as e,c as a,o,b as s}from"./app.c11232d1.js";const v='{"title":"","description":"","frontmatter":{},"relativePath":"global.md","lastUpdated":1641226279104}',t={},c=s(`<blockquote><p>\u5F53\u524D\u9879\u76EE\u914D\u7F6E</p></blockquote><p>\u8FD4\u56DE\u503C: \u5BF9\u8C61</p><div class="language-shell"><pre><code>this.<span class="token variable">$config</span> 
+</code></pre></div><blockquote><p>\u7F51\u7EDC\u8BF7\u6C42</p></blockquote><div class="language-shell"><pre><code>this.<span class="token variable">$requests</span>
+</code></pre></div><blockquote><p>\u5F53\u524D\u5E73\u53F0</p></blockquote><p>\u8FD4\u56DE\u503C:\u5B57\u7B26\u4E32</p><div class="language-shell"><pre><code>this.<span class="token variable">$platform</span>
+</code></pre></div>`,8),l=[c];function p(n,r,_,d,i,u){return o(),a("div",null,l)}var k=e(t,[["render",p]]);export{v as __pageData,k as default};

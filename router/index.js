@@ -22,6 +22,11 @@ if(Config.debug){
 //全局路由前置守卫
 router.beforeEach((to, from, next) => {
   console.log('路由跳转', from.path, to.path)
+  if(Config.bottomNav.includes(to.path)){
+    uni.switchTab({
+      url: from.path,
+    })
+  }
   next()
 })
 

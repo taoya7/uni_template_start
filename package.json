@@ -4,6 +4,7 @@
   "description": "Plugin",
   "main": "main.js",
   "dependencies": {
+    "mp-html": "^2.2.1",
     "uni-read-pages": "^1.0.5",
     "uni-simple-router": "2.0.7",
     "uview-ui": "^1.8.4"
@@ -20,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "cz": "npx cz",
-    "prettier": "prettier --write pages"
+    "prettier": "prettier --write pages package.json"
   },
   "repository": {
     "type": "git",
