@@ -43,6 +43,19 @@ module.exports = {
             }
           ]
         },
+        {
+          text: '组件',
+          children: [
+            {
+              text: '导航',
+              link: '/components/navBar'
+            },
+            {
+              text: '轮播',
+              link: '/components/banner'
+            },
+          ]
+        },
       ],
     },
     head: [

@@ -1,5 +1,5 @@
 <template>
-  <view> 
+  <view>
     <TestForDev></TestForDev>
   </view>
 </template>

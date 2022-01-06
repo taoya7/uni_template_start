@@ -3,16 +3,16 @@
 	export default {
 		onLaunch: function() {
 			this.updateManager()
-      if(Conf.debug){}
+      if(Conf.debug){
+        console.log("%c设备信息: ",`color: pink;`, this.$u.sys());
+      }
 		},
 		onShow: function() {
 		},
 		onHide: function() {
 		},
 		methods: {
-			/**
-			* 小程序主动更新
-			*/
+			/**小程序主动更新*/
 			updateManager(){
 				const updateManager = uni.getUpdateManager();
 				updateManager.onCheckForUpdate(res => {
@@ -48,5 +48,19 @@
 
 <style lang="scss">
 @import "uview-ui/index.scss";
-@import "styles/index.scss";
+@import 'lib/tuniao-ui/index.scss';
+@import 'lib/tuniao-ui/iconfont.css';
+// #ifdef H5
+uni-page-head {
+  display: none;
+}
+
+uni-toast {
+  z-index: 10078 !important;
+}
+
+uni-modal {
+  z-index: 10078 !important;
+}
+// #endif
 </style>
