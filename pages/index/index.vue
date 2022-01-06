@@ -1,5 +1,8 @@
 <template>
-  <view class="warp">
+  <GlobalPage>
+    
+  
+    <view class="warp">
     <!-- 导航 -->
     <tn-nav-bar
       fixed
@@ -9,9 +12,7 @@
     >
       <view class="custom-nav tn-flex tn-flex-col-center tn-flex-row-left">
         <view class="custom-nav__back">
-          <view
-            class="logo-pic tn-shadow-blur"
-          >
+          <view class="logo-pic tn-shadow-blur">
             <view class="logo-image"> </view>
           </view>
           <!-- <view class="logo-pic tn-shadow-blur" :style="{
@@ -154,6 +155,8 @@
 
     <nav-index-button></nav-index-button>
   </view>
+
+  </GlobalPage>
 </template>
 
 <script>

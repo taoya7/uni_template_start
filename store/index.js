@@ -33,7 +33,7 @@ const store = new Vuex.Store({
   state: {
     // 如果上面从本地获取的lifeData对象下有对应的属性，就赋值给state中对应的变量
     // 加上vuex_前缀，是防止变量名冲突，也让人一目了然
-    vuex_user: lifeData.vuex_user ? lifeData.vuex_user : {name: '图鸟'},
+    vuex_user: lifeData.vuex_user ? lifeData.vuex_user : {name: ''},
     
     // 如果vuex_version无需保存到本地永久存储，无需lifeData.vuex_version方式
     // app版本
@@ -43,9 +43,37 @@ const store = new Vuex.Store({
     // 状态栏高度
     vuex_status_bar_height: 0,
     // 自定义导航栏的高度
-    vuex_custom_bar_height: 0
+    vuex_custom_bar_height: 0,
+    
+    tabbar_current: 0,
+    tabbar_list: [
+      {
+        iconPath: "home",
+        selectedIconPath: "home-fill",
+        text: '首页',
+        customIcon: false,
+        pagePath: '/pages/index/index',
+      },
+      {
+        iconPath: "home",
+        selectedIconPath: "home-fill",
+        text: '组件',
+        customIcon: false,
+        pagePath: '/pages/about/about',
+      },
+      {
+        iconPath: "home",
+        selectedIconPath: "home-fill",
+        text: '我的',
+        customIcon: false,
+        pagePath: '/pages/mine/mine',
+      },
+    ],
   },
   mutations: {
+    changetabBar(state, e){
+      state.tabbar_current = e;
+    },
     $tStore(state, payload) {
       // 判断是否多层调用，state中为对象存在的情况，例如user.info.score = 1
       let nameArr = payload.name.split('.')

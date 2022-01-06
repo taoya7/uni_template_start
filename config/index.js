@@ -5,6 +5,8 @@ import Color from './color.js';
 export default {
 	// 软件配置
 	name: 'Uni',
+  // 高德地图Key
+  amapKey: '5aa783cdc7057b1ae9a1d8507891605b', 
   // 底部导航路径列表
   bottomNav: [
     'pages/index/index',

@@ -1,5 +1,8 @@
 import { isPhone, isMobile } from '@/utils/verify.js';
 import requests from '@/utils/request.js';
+var amap = require('@/lib/amap/amap-wx.130.js');
+import Config from '@/config/index.js';
+
 class WxUtils {
   /// 拨打电话
   call(phoneNumber){
@@ -63,6 +66,32 @@ class WxUtils {
         })
       }
     })
+  }
+
+  /// 定位
+  location(){
+    return new Promise(function(resolve, reject){
+    	uni.getLocation({
+    	  type: 'gcj02',
+    	  geocode: true,
+    	  success: (res) => {
+          console.log(res);
+          if(res.errMsg !== "getLocation:ok"){
+            uni.showModal({
+              title: '定位出错'
+            })
+          }else{
+            resolve(res);
+          }
+    	},
+        fail(e) {
+          uni.showModal({
+            title: '定位出错'
+          })
+          reject(e);
+        }
+    	});
+    });
   }
 }
 

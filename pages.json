@@ -34,34 +34,16 @@
       "root":"pages/subpages",
       "pages": [
         {
-        	"path": "news/detail",
-        	"style": {
-            "navigationStyle":"default"
-        	}
+        	"path": "news/detail"
         },
         {
-          "path" : "news/news",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false,
-                "navigationStyle":"default"
-            }
+          "path" : "news/news"
         },
         {
-          "path" : "notice/notice",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false,
-                "navigationStyle":"default"
-            }
+          "path" : "notice/notice"
         },
         {
-          "path" : "notice/detail",
-            "style" :                                                                                    
-            {
-                "enablePullDownRefresh": false,
-                 "navigationStyle":"default"
-            }
+          "path" : "notice/detail"
         },
         {
           "path" : "public/login",
@@ -91,10 +73,6 @@
     }
   ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "",
-		"navigationBarBackgroundColor": "#ffffff",
-		"backgroundColor": "#F8F8F8",
     "navigationStyle":"custom"
 	},
 	"tabBar": {

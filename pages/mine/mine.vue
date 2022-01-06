@@ -1,13 +1,12 @@
 <template>
+  <GlobalPage>
   <view class="mine-page">
     <!-- 导航 -->
-    <tn-nav-bar  :customBack="true"  :fixed="true" backgroundColor='transparent'>
-      <view slot="back" >
-        <view><text class='tn-icon-home-capsule-fill' style="margin-left: 32rpx;"></text></view>
-      </view>
-    </tn-nav-bar>
     <view class="mine-cover">
-      <image src="http://alicdn.taoya.art/img/20220105105902.png" mode="widthFix"></image>
+      <image
+        src="http://alicdn.taoya.art/img/20220105105902.png"
+        mode="widthFix"
+      ></image>
     </view>
     <view class="mine-content">
       <!-- 用户卡片 -->
@@ -15,8 +14,9 @@
       <!-- 导航 -->
       <view class="nav">
         <view class="section" v-for="nav in navs">
-          <u-cell-item :title="item"
-            v-for="(item,index) in nav"
+          <u-cell-item
+            :title="item"
+            v-for="(item, index) in nav"
             :key="index"
             class="section-item"
             :arrow="false"
@@ -24,31 +24,32 @@
           >
           </u-cell-item>
         </view>
-      </view> 
+      </view>
     </view>
   </view>
+  </GlobalPage>
 </template>
 
 <script>
-  import Conf from '@/config/index.js';
-  export default {
-    data() {
-      return {
-        navs: [
-          ['我的消息', '我的动态'],
-          ['问题反馈', `关于${Conf.name}`],
-          ['消息设置'],
-        ],
-      };
+import Conf from '@/config/index.js'
+export default {
+  data() {
+    return {
+      navs: [
+        ['我的消息', '我的动态'],
+        ['问题反馈', `关于${Conf.name}`],
+        ['消息设置']
+      ]
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
-.mine-page{
+.mine-page {
   width: 100%;
   min-height: 100vh;
-  .mine-cover{
+  .mine-cover {
     width: 100%;
     height: 40vh;
     background-color: #eee;
@@ -59,24 +60,24 @@
       object-fit: cover;
     }
   }
-  .mine-content{
+  .mine-content {
     transform: translateY(-100rpx);
   }
-  .mine-card{
+  .mine-card {
     background: pink;
     height: 300rpx;
     background-color: #fff;
     margin: 0 32rpx;
     border-radius: 10rpx;
   }
-  .nav{
+  .nav {
     margin: 0 32rpx;
     margin-top: 20rpx;
-    .section{
+    .section {
       margin-bottom: 20rpx;
       background-color: #fff;
       border-radius: 10rpx;
-      .section-item{
+      .section-item {
         /deep/ .u-cell {
           padding: 30rpx 30rpx;
           .u-cell_title {
