@@ -34,6 +34,12 @@
       "root":"pages/subpages",
       "pages": [
         {
+        	"path": "about/about"
+        },
+        {
+        	"path": "mine/usermessage"
+        },
+        {
         	"path": "search/search"
         },
         {

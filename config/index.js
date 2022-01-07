@@ -5,6 +5,8 @@ import Color from './color.js';
 export default {
 	// 软件配置
 	name: 'Uni',
+  description: '软件介绍',
+  baseUrl: 'https://wangge.wb.oiblue.com/api',
   // 高德地图Key
   amapKey: '5aa783cdc7057b1ae9a1d8507891605b', 
   // 底部导航路径列表

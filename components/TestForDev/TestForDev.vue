@@ -21,6 +21,9 @@
     <tn-button @click="$Router.push('/pages/subpages/test/tabpage')">Tab切换页面</tn-button>
     <tn-button @click="$Router.push('/pages/subpages/search/search')">APP搜索</tn-button>
     
+    <!--  -->
+    <FloatButtonShare @tap="share=true"></FloatButtonShare>
+    <ShareDialog :state="share" @cancel="share=false;"></ShareDialog>
   </view>
 </template>
 
@@ -28,6 +31,12 @@
   import template_page_mixin from '@/mixin/template_page_mixin.js'
   export default {
     mixins: [template_page_mixin],
+    data(){
+      return {
+        visible: true,
+        share: false,
+      }
+    },
     mounted() {
     },
     methods: {

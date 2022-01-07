@@ -25,10 +25,14 @@ const http = axios.create({
 });
 
 http.interceptors.request.use((config) => { /* 请求之前拦截器 */
-    // let token = uni.getStorageSync('token');
-    // if(token){
-    //     config.header['token'] =token;
-    // }
+    let token = uni.getStorageSync('token');
+    // uni.showLoading({
+    //   title: '加载中',
+    //   mask: true
+    // })
+    if(token){
+        config.header['token'] =token;
+    }
     return config;
 }, error => {
     return Promise.reject(error)
@@ -36,8 +40,33 @@ http.interceptors.request.use((config) => { /* 请求之前拦截器 */
 
 /* 请求之后拦截器 */
 http.interceptors.response.use(async (response) => {
+    uni.hideLoading()
+    let code = response.statusCode;
+    if(code == 401){
+      uni.showModal({
+        title: '温馨提示',
+        content: '此时此刻需要您登录喔~',
+        confirmText: "去登录",
+        cancelText: "再逛会",
+        success: res => {
+          if (res.confirm) {
+            uni.navigateTo({
+              url: "/pages/subpages/public/login"
+            })
+          }
+          if (res.cancel) {
+            uni.navigateBack()
+          }
+        }
+      })
+    }
     return response.data;
 }, (error) => {
+    uni.hideLoading()
+    console.log(error);
+    uni.showModal({
+      title: '服务器异常'
+    })
     return Promise.reject(error)
 });
 

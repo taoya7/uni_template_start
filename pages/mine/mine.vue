@@ -13,8 +13,8 @@
               <text class="u-name">{{ userinfo.nickName }}</text>
             </view>
           </view>
-          <view class="mine-r">
-            <image src="../../static/background/icon-setting.png" ></image>
+          <view class="mine-r" @click="$Router.push('/pages/subpages/mine/usermessage')">
+            <image src="../../static/background/icon-setting.png"></image>
           </view>
         </view>
       </view>
@@ -29,9 +29,22 @@
               class="section-item"
               :arrow="false"
               hover-class=""
+              @click="handleNav(item)"
             >
             </u-cell-item>
           </view>
+          <!-- #ifdef MP-WEIXIN -->
+          <view class="section">
+            <button open-type="feedback">问题反馈</button>
+            <u-cell-item
+              title="设置"
+              class="section-item"
+              :arrow="false"
+              hover-class=""
+              @click="handleNav('设置')"
+            ></u-cell-item>
+          </view>
+          <!-- #endif -->
         </view>
       </view>
     </view>
@@ -45,25 +58,32 @@ export default {
     return {
       navs: [
         ['我的消息', '我的动态'],
-        ['问题反馈', `关于${Conf.name}`],
-        ['消息设置']
+        [`关于${Conf.name}`],
       ],
-      userinfo: {},
+      userinfo: {}
     }
   },
   methods: {
-    getUserinfo(){
-      let that = this;
+    handleNav(item){
+      if(item=='设置'){
+        uni.openSetting();
+      }
+      if(item==`关于${Conf.name}`){
+        this.$Router.push('/pages/subpages/about/about');
+      }
+    },
+    getUserinfo() {
+      let that = this
       uni.getUserInfo({
         success(res) {
-          that.userinfo = res.userInfo;
-          console.log(res.userInfo);
+          that.userinfo = res.userInfo
+          console.log(res.userInfo)
         }
       })
     }
   },
-  onShow(){
-    this.getUserinfo();
+  onShow() {
+    this.getUserinfo()
   }
 }
 </script>
@@ -98,7 +118,7 @@ export default {
       }
       margin-right: 20rpx;
     }
-    .mine-info{
+    .mine-info {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -126,11 +146,23 @@ export default {
       margin-bottom: 20rpx;
       background-color: #fff;
       border-radius: 10rpx;
+      button {
+        background-color: #fff;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 400;
+        height: 114rpx;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #333;
+      }
       .section-item {
         /deep/ .u-cell {
           padding: 30rpx 30rpx;
           .u-cell_title {
             font-size: 16px;
+            font-weight: 400;
           }
         }
       }
