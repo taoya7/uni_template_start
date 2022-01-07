@@ -1,7 +1,7 @@
 <template>
   <SimpleScaffold title="新闻管理" class="news">
     <Search placeholder="请输入标题" @search="handleSearch"></Search>
-    <Size h='100'></Size>
+    <Size h="100"></Size>
     <view class="news-wrap">
       <view
         class="news-item"
@@ -44,10 +44,8 @@ export default {
 <style lang="scss" scoped>
 .news {
   /deep/ .search {
-
   }
-  .news-wrap{
-   
+  .news-wrap {
   }
 }
 .item {

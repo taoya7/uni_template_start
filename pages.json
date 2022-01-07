@@ -34,6 +34,9 @@
       "root":"pages/subpages",
       "pages": [
         {
+        	"path": "search/search"
+        },
+        {
         	"path": "news/detail"
         },
         {
@@ -46,12 +49,7 @@
           "path" : "notice/detail"
         },
         {
-          "path" : "public/login",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "登陆",
-                "enablePullDownRefresh": false
-            }
+          "path" : "public/login"
         },
         {
           "path" : "public/webview",
@@ -62,12 +60,10 @@
             }
         },
         {
-          "path" : "test/zpadding",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "测试-分页",
-                "enablePullDownRefresh": false
-            }
+          "path" : "test/zpadding"
+        },
+        {
+          "path" : "test/tabpage"
         }
       ]
     }

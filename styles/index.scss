@@ -2,3 +2,7 @@ page {
   background-color: $app-bg-color !important;
   overflow-x: hidden;
 }
+
+.u-border-bottom:after {
+  border-bottom-width: 0px;
+}

@@ -56,6 +56,19 @@ module.exports = {
             },
           ]
         },
+        {
+          text: '页面布局',
+          children: [
+            {
+              text: 'SimpleScaffold',
+              link: '/page/SimpleScaffold'
+            },
+            {
+              text: 'GlobalPage',
+              link: '/page/GlobalPage'
+            },
+          ]
+        },
       ],
     },
     head: [

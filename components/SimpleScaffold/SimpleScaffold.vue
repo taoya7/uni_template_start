@@ -9,6 +9,7 @@
       }"
       :title-color='navbarTextColor'
       :is-fixed='true'
+      
       >
     </u-navbar>
     <view class="scaffold-content">
@@ -25,20 +26,30 @@
     name:"SimpleScaffold",
     mixins: [template_page_mixin],
     props: {
+      // 标题文字
       title: {
         type: String,
         default: ' '
       },
+      // 是否显示返回按钮
       isBack: {
         type: Boolean,
         default: true,
+      },
+      // 导航背景颜色
+      navbarColor: {
+        type: String,
+        default: ColorsManager.navbarColor
+      },
+      // 导航文字颜色
+      navbarTextColor: {
+        type: String,
+        default: ColorsManager.navbarTextColor
       },
     },
     data() {
       return {
         Conf,
-        navbarColor: ColorsManager.navbarColor,
-        navbarTextColor: ColorsManager.navbarTextColor,
       };
     },
     methods: {

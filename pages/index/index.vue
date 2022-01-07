@@ -1,161 +1,158 @@
 <template>
   <GlobalPage>
-    
-  
     <view class="warp">
-    <!-- 导航 -->
-    <tn-nav-bar
-      fixed
-      :isBack="false"
-      :bottomShadow="false"
-      backgroundColor="#FFFFFF"
-    >
-      <view class="custom-nav tn-flex tn-flex-col-center tn-flex-row-left">
-        <view class="custom-nav__back">
-          <view class="logo-pic tn-shadow-blur">
-            <view class="logo-image"> </view>
-          </view>
-          <!-- <view class="logo-pic tn-shadow-blur" :style="{
+      <!-- 导航 -->
+      <tn-nav-bar
+        fixed
+        :isBack="false"
+        :bottomShadow="false"
+        backgroundColor="#FFFFFF"
+      >
+        <view class="custom-nav tn-flex tn-flex-col-center tn-flex-row-left">
+          <view class="custom-nav__back">
+            <view class="logo-pic tn-shadow-blur">
+              <view class="logo-image"> </view>
+            </view>
+            <!-- <view class="logo-pic tn-shadow-blur" :style="{
             'background': 'url('+ Logo+ ')'
           }">
             <view class="logo-image">
             </view>
           </view> -->
-        </view>
-        <view
-          class="custom-nav__search tn-flex tn-flex-col-center tn-flex-row-center"
-        >
-          <view
-            class="custom-nav__search__box tn-flex tn-flex-col-center tn-flex-row-left tn-color-gray--dark tn-bg-gray--light"
-          >
-            <view class="custom-nav__search__icon tn-icon-search"></view>
-            <view class="custom-nav__search__text tn-padding-left-xs"
-              >搜索你喜欢的产品</view
-            >
           </view>
-        </view>
-      </view>
-    </tn-nav-bar>
-
-    <!-- 页面内容 -->
-    <view
-      class="tn-margin"
-      :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
-    >
-      <tn-swiper
-        :list="banner"
-        :height="350"
-        :effect3d="false"
-        mode="dot"
-      ></tn-swiper>
-    </view>
-
-    <view class="tn-padding-top-xs">
-      <!-- Section-1 -->
-      <view class="tn-flex tn-flex-row-between tn-margin-sm tn-padding-top">
-        <view class="justify-content-item tn-text-bold tn-text-xl">
-          <text class="tn-icon-title"></text>
-          <text class="">数字生活</text>
-        </view>
-        <view class="justify-content-item tn-text-lg">
-          <text class="tn-padding-xs">更多</text>
-          <text class="tn-icon-right"></text>
-        </view>
-      </view>
-
-      <view
-        class="tn-info__container tn-flex tn-flex-wrap tn-flex-col-center tn-flex-row-between tn-margin-left tn-margin-right"
-      >
-        <block v-for="(item, index) in tuniaoData" :key="index">
           <view
-            class="tn-info__item tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between tn-color-white tn-bg-blue--light tn-shadow-blur"
+            class="custom-nav__search tn-flex tn-flex-col-center tn-flex-row-center"
           >
             <view
-              class="tn-info__item__left tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-left"
+              class="custom-nav__search__box tn-flex tn-flex-col-center tn-flex-row-left tn-color-gray--dark tn-bg-gray--light"
+            >
+              <view class="custom-nav__search__icon tn-icon-search"></view>
+              <view class="custom-nav__search__text tn-padding-left-xs"
+                >搜索你喜欢的产品</view
+              >
+            </view>
+          </view>
+        </view>
+      </tn-nav-bar>
+
+      <!-- 页面内容 -->
+      <view
+        class="tn-margin"
+        :style="{ paddingTop: vuex_custom_bar_height + 'px' }"
+      >
+        <tn-swiper
+          :list="banner"
+          :height="350"
+          :effect3d="false"
+          mode="dot"
+        ></tn-swiper>
+      </view>
+
+      <view class="tn-padding-top-xs">
+        <!-- Section-1 -->
+        <view class="tn-flex tn-flex-row-between tn-margin-sm tn-padding-top">
+          <view class="justify-content-item tn-text-bold tn-text-xl">
+            <text class="tn-icon-title"></text>
+            <text class="">数字生活</text>
+          </view>
+          <view class="justify-content-item tn-text-lg">
+            <text class="tn-padding-xs">更多</text>
+            <text class="tn-icon-right"></text>
+          </view>
+        </view>
+
+        <view
+          class="tn-info__container tn-flex tn-flex-wrap tn-flex-col-center tn-flex-row-between tn-margin-left tn-margin-right"
+        >
+          <block v-for="(item, index) in tuniaoData" :key="index">
+            <view
+              class="tn-info__item tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-between tn-color-white tn-bg-blue--light tn-shadow-blur"
             >
               <view
-                class="tn-info__item__left--icon tn-flex tn-flex-col-center tn-flex-row-center tn-color-white"
-                :class="[`tn-bg-${item.color}--disabled`]"
+                class="tn-info__item__left tn-flex tn-flex-direction-row tn-flex-col-center tn-flex-row-left"
               >
-                <view :class="[`tn-icon-${item.icon}`]"></view>
-              </view>
-              <view class="tn-info__item__left__content">
                 <view
-                  class="tn-info__item__left__content--title tn-text-xl tn-color-aquablue--dark"
-                  >{{ item.title }}</view
+                  class="tn-info__item__left--icon tn-flex tn-flex-col-center tn-flex-row-center tn-color-white"
+                  :class="[`tn-bg-${item.color}--disabled`]"
                 >
-                <!-- <view class="tn-info__item__left__content--data tn-padding-top-xs tn-color-black">
+                  <view :class="[`tn-icon-${item.icon}`]"></view>
+                </view>
+                <view class="tn-info__item__left__content">
+                  <view
+                    class="tn-info__item__left__content--title tn-text-xl tn-color-aquablue--dark"
+                    >{{ item.title }}</view
+                  >
+                  <!-- <view class="tn-info__item__left__content--data tn-padding-top-xs tn-color-black">
                 {{ item.value }}
                   <text class="tn-icon-right tn-padding-left-xs"></text>
                 </view> -->
+                </view>
               </view>
-            </view>
-            <!-- <view class="tn-info__item__right">
+              <!-- <view class="tn-info__item__right">
               <view class="tn-info__item__right--icon">
                 <view :class="[`tn-icon-${item.icon}`]"></view>
               </view>
             </view> -->
+            </view>
+          </block>
+        </view>
+
+        <!-- Section-2 -->
+        <view class="tn-flex tn-flex-row-between tn-margin-sm">
+          <view class="justify-content-item tn-text-bold tn-text-xl">
+            <text class="tn-icon-title"></text>
+            <text class="">发现</text>
           </view>
-        </block>
-      </view>
-
-      <!-- Section-2 -->
-      <view class="tn-flex tn-flex-row-between tn-margin-sm">
-        <view class="justify-content-item tn-text-bold tn-text-xl">
-          <text class="tn-icon-title"></text>
-          <text class="">发现</text>
+          <view class="justify-content-item tn-text-lg">
+            <text class="tn-padding-xs">更多</text>
+            <text class="tn-icon-right"></text>
+          </view>
         </view>
-        <view class="justify-content-item tn-text-lg">
-          <text class="tn-padding-xs">更多</text>
-          <text class="tn-icon-right"></text>
-        </view>
-      </view>
 
-      <!-- 比例 start-->
-      <view class="tn-flex tn-flex-wrap tn-margin-sm tn-padding-bottom-xl">
-        <block v-for="(item, index) in content" :key="index">
-          <view class="" style="width: 50%">
-            <view class="tn-blogger-content__wrap">
-              <view
-                class="image-pic"
-                :style="'background-image:url(' + item.mainImage + ')'"
-              >
-                <view class="image-music"> </view>
-              </view>
+        <!-- 比例 start-->
+        <view class="tn-flex tn-flex-wrap tn-margin-sm tn-padding-bottom-xl">
+          <block v-for="(item, index) in content" :key="index">
+            <view class="" style="width: 50%">
+              <view class="tn-blogger-content__wrap">
+                <view
+                  class="image-pic"
+                  :style="'background-image:url(' + item.mainImage + ')'"
+                >
+                  <view class="image-music"> </view>
+                </view>
 
-              <view
-                class="tn-blogger-content__label tn-text-justify tn-padding-sm"
-              >
-                <text class="tn-blogger-content__label__desc">{{
-                  item.desc
-                }}</text>
-              </view>
+                <view
+                  class="tn-blogger-content__label tn-text-justify tn-padding-sm"
+                >
+                  <text class="tn-blogger-content__label__desc">{{
+                    item.desc
+                  }}</text>
+                </view>
 
-              <view
-                class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding-left-sm tn-padding-right-sm tn-padding-bottom-sm"
-              >
-                <view class="justify-content-item tn-flex tn-flex-col-center">
-                  <view style="margin-right: 10rpx; margin-left: 20rpx">
-                    <tn-avatar-group
-                      :lists="item.viewUser.latestUserAvatar"
-                      size="sm"
-                    ></tn-avatar-group>
+                <view
+                  class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding-left-sm tn-padding-right-sm tn-padding-bottom-sm"
+                >
+                  <view class="justify-content-item tn-flex tn-flex-col-center">
+                    <view style="margin-right: 10rpx; margin-left: 20rpx">
+                      <tn-avatar-group
+                        :lists="item.viewUser.latestUserAvatar"
+                        size="sm"
+                      ></tn-avatar-group>
+                    </view>
+                    <text class="tn-color-gray"
+                      >{{ item.viewUser.viewUserCount }}人</text
+                    >
                   </view>
-                  <text class="tn-color-gray"
-                    >{{ item.viewUser.viewUserCount }}人</text
-                  >
                 </view>
               </view>
             </view>
-          </view>
-        </block>
+          </block>
+        </view>
+        <!-- 比例 end-->
       </view>
-      <!-- 比例 end-->
+
+      <nav-index-button></nav-index-button>
     </view>
-
-    <nav-index-button></nav-index-button>
-  </view>
-
   </GlobalPage>
 </template>
 
